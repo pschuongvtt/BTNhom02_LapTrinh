@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace BaiTapNhom2_Final.OOP
 {
-    public class Invoice
+    public class Invoice : Payable
     {
+        private string partNumber;
+        private string partDescription;
+        private int quantity;
+        private double pricePerItemc;
+
+        public double PaymentAmount()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
