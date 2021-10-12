@@ -8,5 +8,7 @@ namespace BaiTapNhom2_Final.OOP
 {
     public class Department
     {
+        //private string departmentName; 
+
     }
 }
