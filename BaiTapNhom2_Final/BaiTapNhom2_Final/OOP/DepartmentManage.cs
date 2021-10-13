@@ -8,12 +8,14 @@ namespace BaiTapNhom2_Final.OOP
 {
     class DepartmentManage
     {
-        Department department = new Department();
-
+        List<Department> listdepartment = new List<Department>();
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
             
+            //Khởi tạo đối tượng 
+            DepartmentManage manage = new DepartmentManage();
+
             int x = 3;
             do
             {
@@ -79,6 +81,9 @@ namespace BaiTapNhom2_Final.OOP
                             switch (case1)
                             {
                                 case 1 :
+                                    Console.WriteLine("");
+                                    string tenphongban = Console.ReadLine();
+                                    manage.TimKiemNhanVienTheoPhongBan(tenphongban.Trim());
                                     break; 
                                 case 2 :
                                     break;
@@ -90,6 +95,8 @@ namespace BaiTapNhom2_Final.OOP
                         break;
                     case 4:
                         //Kiều
+
+
                         break;
                 }
 
@@ -97,7 +104,53 @@ namespace BaiTapNhom2_Final.OOP
 
             Console.ReadKey(); 
         }
-        //Xử lý code tiếp 
+
+        //Nhập danh sách phòng ban
+        public void NhapDanhSachPhongBan(string tenphongban, List<Employee> ls)
+        {
+            Department department = new Department(tenphongban, ls);
+            listdepartment.Add(department);
+        }
+
+        //Tìm kiếm nhân viên theo phòng ban 
+        public void TimKiemNhanVienTheoPhongBan(string TenPhongBan)
+        {
+            int kq = 0;
+            foreach (var item in listdepartment)
+            {
+                if (item.DepartmentName.Equals(TenPhongBan))
+                {
+                    item.Display();
+                    kq ++;
+                }
+            }
+            if (kq==0)
+            {
+                Console.WriteLine("Không tìm thấy tên phòng ban ứng với danh sách nhân viên mà bạn cần tìm");
+            }
+        }
+
+        //Tìm kiếm nhân viên theo tên nhân viên 
+        public void TimKiemNhanVienTheoTen(string TenNhanVien)
+        {
+            int kq = 0;
+            foreach (var depart in listdepartment)
+            {
+                foreach (var empl in depart.ListOfEmployee)
+                {
+                    if(empl.LastName.Equals(TenNhanVien))
+                    {
+                        empl.Display();
+                        kq ++;
+                    }
+                }
+            }
+            if (kq==0)
+            {
+                Console.WriteLine("Không tìm thấy tên nhân viên mà bạn cần tìm");
+            }
+        }
+
 
     }
 }
