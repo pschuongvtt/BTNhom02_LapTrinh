@@ -13,7 +13,7 @@ namespace BaiTapNhom2_Final.OOP
         private int quantity;
         private double pricePerItemc;
 
-        //Kế thừa phương thức ảo Interface
+        //Override phương thức từ Interface
         public double PaymentAmount()
         {
             throw new NotImplementedException();

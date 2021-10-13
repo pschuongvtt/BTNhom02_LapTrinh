@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BaiTapNhom2_Final.OOP
 {
-    public abstract class Employee
+    public abstract class Employee : Payable
     {
         private string ssn;
         private string firstName;
@@ -22,7 +22,6 @@ namespace BaiTapNhom2_Final.OOP
             get { return ssn; }
             set { ssn = value; }
         }
-
         public string FirstName
         {
             get {return firstName;}
@@ -33,19 +32,57 @@ namespace BaiTapNhom2_Final.OOP
             get {return lastName;}
             set {lastName = value;}
         }
-
+        public string Phone
+        {
+            get { return phone; }
+            set
+            {
+                if (IsValidPhone(phone) == true)
+                    phone = value;
+                else
+                    Console.WriteLine("Phone number không tồn tại. Phải có ít nhất 7 ký tự");
+            }
+        }
+        public string Email
+        {
+            get { return email; }
+            set
+            {
+                if (IsValidEmail(email) == true)
+                    email = value;
+            }
+        }
+        public string BirthDate
+        {
+            get { return birthDate; }
+            set
+            {
+                String.Format("{0:dd/MM/yyyy}", birthDate);
+            }
+        }
         //Xây dựng hàm khởi tạo không có tham số 
         public Employee()
         {
 
         }
 
-        //Xây dựng hàm khởi tạo có tham số
+        //Xây dựng hàm khởi tạo có 3 tham số
         public Employee(string SSN, string FirstName, string LastName)
         {
             this.SSN = SSN;
             this.FirstName = FirstName;
             this.LastName = LastName;
+        }
+
+        //Xây dựng hàm khởi tạo có 5 tham số
+        public Employee(string SSN, string FirstName, string LastName, string Phone, string Email, string BirthDate)
+        {
+            this.SSN = SSN;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Phone = Phone;
+            this.Email = Email;
+            this.BirthDate = BirthDate;
         }
 
         //Hàm kiểm tra Số điện thoại có phải kiểu số 0 : 1 - True , 0 - False
@@ -63,7 +100,13 @@ namespace BaiTapNhom2_Final.OOP
             return rx.IsMatch(email);
         }
 
-        //Xây dựng hàm xuất thông tin ra màn hình 
+        //Xây dựng phương thức ToString -- Chính là phương thức Display 
         public abstract void Display();
+        
+        //Override phương thức từ Interface
+        public double PaymentAmount()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
