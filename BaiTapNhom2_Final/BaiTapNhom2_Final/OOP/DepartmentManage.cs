@@ -8,11 +8,12 @@ namespace BaiTapNhom2_Final.OOP
 {
     class DepartmentManage
     {
+        Department department = new Department();
+
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-            Department department = new Department();
-
+            
             int x = 3;
             do
             {
@@ -96,6 +97,7 @@ namespace BaiTapNhom2_Final.OOP
 
             Console.ReadKey(); 
         }
-       
+        //Xử lý code tiếp 
+
     }
 }
