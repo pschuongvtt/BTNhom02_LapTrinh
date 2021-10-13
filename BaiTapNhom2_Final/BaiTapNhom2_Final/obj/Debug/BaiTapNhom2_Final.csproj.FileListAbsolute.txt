@@ -1,1 +1,6 @@
 F:\BaiTapNhom\BaiTapNhom2_Final\BaiTapNhom2_Final\bin\Debug\BaiTapNhom2_Final.exe.config
+F:\BaiTapNhom\BaiTapNhom2_Final\BaiTapNhom2_Final\obj\Debug\BaiTapNhom2_Final.csprojResolveAssemblyReference.cache
+F:\BaiTapNhom\BaiTapNhom2_Final\BaiTapNhom2_Final\bin\Debug\BaiTapNhom2_Final.exe
+F:\BaiTapNhom\BaiTapNhom2_Final\BaiTapNhom2_Final\bin\Debug\BaiTapNhom2_Final.pdb
+F:\BaiTapNhom\BaiTapNhom2_Final\BaiTapNhom2_Final\obj\Debug\BaiTapNhom2_Final.exe
+F:\BaiTapNhom\BaiTapNhom2_Final\BaiTapNhom2_Final\obj\Debug\BaiTapNhom2_Final.pdb

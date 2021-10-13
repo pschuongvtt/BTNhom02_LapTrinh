@@ -17,8 +17,13 @@ namespace BaiTapNhom2_Final.OOP
             get { return departmentName; }
             set { departmentName = value; }
         }
+        public List<Employee> ListOfEmployee
+        {
+            get { return listOfEmployee; }
+            set { listOfEmployee = value; }
+        }
 
-        //Xây dựng hàm khởi tạo không tham số 
+        //Xây dựng hàm khởi tạo không tham số
         public Department()
         {
             this.DepartmentName = "";
@@ -26,10 +31,10 @@ namespace BaiTapNhom2_Final.OOP
         }
 
         //Xây dựng hàm khởi tạo có tham số 
-        public Department(string DepartmentName)
+        public Department(string DepartmentName, List<Employee> listOfEmployee)
         {
             this.DepartmentName = DepartmentName;
-            listOfEmployee = new List<Employee>();
+            this.listOfEmployee = listOfEmployee;
         }
 
         //Xây dựng phương thức ToString -- Chính là phương thức Display 
@@ -44,16 +49,6 @@ namespace BaiTapNhom2_Final.OOP
             }
         }
 
-        //Add SalariedEmployee
-        public void AddEmployee(SalariedEmployee ee)
-        {
-            listOfEmployee.Add(ee);
-        }
-
-        //Add HourtyEmployee
-        public void AddEmployee(HourtyEmployee ee)
-        {
-            listOfEmployee.Add(ee);
-        }
+        
     }
 }

@@ -10,7 +10,6 @@ namespace BaiTapNhom2_Final
     {
         static void Main(string[] args)
         {
-
         }
     }
 }
