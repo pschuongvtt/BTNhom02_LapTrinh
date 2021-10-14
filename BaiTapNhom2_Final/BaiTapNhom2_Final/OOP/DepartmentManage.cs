@@ -204,7 +204,7 @@ namespace BaiTapNhom2_Final.OOP
 
                 int case1 = Convert.ToInt32(Console.ReadLine());
                 //Khai báo biến chung
-                double CommissionRate, GrossSales, BasicSalary, Wage, WorkingHours;
+                double CommissionRate = 0, GrossSales = 0, BasicSalary = 0, Wage = 0, WorkingHours = 0;
                 string SSN, FirstName, LastName, Phone = "089875852", Email="test@gmail.com", BirthDate;
                 int NgaySinh = 17, ThangSinh = 8, NamSinh = 1997;
                 string chuoi_NgaySinh, chuoi_ThangSinh;
@@ -289,13 +289,42 @@ namespace BaiTapNhom2_Final.OOP
                         else chuoi_ThangSinh = ThangSinh.ToString();
                         BirthDate = chuoi_NgaySinh  + "/" + chuoi_ThangSinh + "/" + NamSinh;
 
-                        Console.WriteLine("Mời bạn nhập CommissionRate");
-                        CommissionRate = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine("Mời bạn nhập GrossSales");
-                        GrossSales = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine("Mời bạn nhập BasicSalary");
-                        BasicSalary = Convert.ToDouble(Console.ReadLine()); 
+                        while (temp > 0)
+                        {
+                            Console.WriteLine("Mời bạn nhập CommissionRate");
+                            string s = Console.ReadLine();
+                            if (Convert.ToDouble(s) >= 0)
+                            {
+                                CommissionRate = Convert.ToDouble(s);
+                                break;
+                            }
+                            else Console.WriteLine("Bạn nhập sai định dạng hoặc giá trị phải > 0 cho CommissionRate");
+                        }
 
+                        while (temp > 0)
+                        {
+                            Console.WriteLine("Mời bạn nhập GrossSales");
+                            string s = Console.ReadLine();
+                            if (Convert.ToDouble(s) >= 0)
+                            {
+                                GrossSales = Convert.ToDouble(s);
+                                break;
+                            }
+                            else Console.WriteLine("Bạn nhập sai định dạng hoặc giá trị phải > 0 cho GrossSales");
+                        }
+
+                        while (temp > 0)
+                        {
+                            Console.WriteLine("Mời bạn nhập BasicSalary");
+                            string s = Console.ReadLine();
+                            if (Convert.ToDouble(s) >= 0)
+                            {
+                                BasicSalary = Convert.ToDouble(s);
+                                break;
+                            }
+                            else Console.WriteLine("Bạn nhập sai định dạng hoặc giá trị phải > 0 cho BasicSalary");
+                        }
+                        
                         //Khởi tạo đối tượng
                         Employee salary = new SalariedEmployee(CommissionRate,GrossSales,BasicSalary,SSN,FirstName,LastName,Phone,Email,BirthDate);
                         //Add thông tin đối tượng vào list
@@ -337,7 +366,7 @@ namespace BaiTapNhom2_Final.OOP
                         {
                             Console.WriteLine("Mời bạn nhập Ngày sinh");
                             string s = Console.ReadLine();
-                            if (IsInt(s) == true)
+                            if (IsInt(s) == true && Convert.ToInt32(s) > 1 && Convert.ToInt32(s) < 31)
                             {
                                 NgaySinh = Convert.ToInt32(s);
                                 break;
@@ -349,7 +378,7 @@ namespace BaiTapNhom2_Final.OOP
                         {
                             Console.WriteLine("Mời bạn nhập Tháng sinh");
                             string s = Console.ReadLine();
-                            if (IsInt(s) == true)
+                            if (IsInt(s) == true && Convert.ToInt32(s) > 1 && Convert.ToInt32(s) < 12)
                             {
                                 ThangSinh = Convert.ToInt32(s);
                                 break;
@@ -379,10 +408,29 @@ namespace BaiTapNhom2_Final.OOP
                         else chuoi_ThangSinh = ThangSinh.ToString();
                         BirthDate = chuoi_NgaySinh  + "/" + chuoi_ThangSinh + "/" + NamSinh;
 
-                        Console.WriteLine("Mời bạn nhập Wage");
-                        Wage = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine("Mời bạn nhập WorkingHours");
-                        WorkingHours = Convert.ToDouble(Console.ReadLine());
+                        while (temp > 0)
+                        {
+                            Console.WriteLine("Mời bạn nhập Wage");
+                            string s = Console.ReadLine();
+                            if (Convert.ToDouble(s) >= 0)
+                            {
+                                Wage = Convert.ToDouble(s);
+                                break;
+                            }
+                            else Console.WriteLine("Bạn nhập sai định dạng hoặc giá trị phải > 0 cho Wage");
+                        }
+
+                        while (temp > 0)
+                        {
+                            Console.WriteLine("Mời bạn nhập WorkingHours");
+                            string s = Console.ReadLine();
+                            if (Convert.ToDouble(s) >= 0)
+                            {
+                                WorkingHours = Convert.ToDouble(s);
+                                break;
+                            }
+                            else Console.WriteLine("Bạn nhập sai định dạng hoặc giá trị phải > 0 cho WorkingHours");
+                        }
 
                         //Khởi tạo đối tượng
                         Employee hourty = new HourtyEmployee(Wage,WorkingHours,SSN,FirstName,LastName,Phone,Email,BirthDate);
