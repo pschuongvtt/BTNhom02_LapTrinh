@@ -51,7 +51,7 @@ namespace BaiTapNhom2_Final.OOP
         //Overide phương thức Display từ Employee --ToString()
         public override void Display()
         {
-            Console.WriteLine("Thông tin SalariedEmployee: \n- SSN: {0} - FirstName: {1} - LastName: {3} - Phone : {4} - Email : {5} - Birthday : {6} - CommissionRate : {7} - GrossSales : {8}, GrossSales: {9}",
+            Console.WriteLine("Thông tin SalariedEmployee: \n- SSN: {0} - FirstName: {1} - LastName: {2} - Phone : {3} - Email : {4} - Birthday : {5} - CommissionRate : {6} - GrossSales : {7}, GrossSales: {8}",
                     SSN, FirstName, LastName, Phone, Email, BirthDate, CommissionRate, GrossSales, BasicSalary);
         }
     }

@@ -18,5 +18,16 @@ namespace BaiTapNhom2_Final.OOP
         {
             throw new NotImplementedException();
         }
+        //Xây dựng phương thức Display 
+        public void Display()
+        {
+
+        }
+        //Xây dựng hàm khởi tạo 
+        public Invoice()
+        {
+
+        }
+
     }
 }

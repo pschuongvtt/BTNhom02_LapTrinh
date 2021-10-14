@@ -37,10 +37,8 @@ namespace BaiTapNhom2_Final.OOP
             get { return phone; }
             set
             {
-                if (IsValidPhone(phone) == true)
+                if (IsValidPhone(value) == true)
                     phone = value;
-                else
-                    Console.WriteLine("Phone number không tồn tại. Phải có ít nhất 7 ký tự");
             }
         }
         public string Email
@@ -48,7 +46,7 @@ namespace BaiTapNhom2_Final.OOP
             get { return email; }
             set
             {
-                if (IsValidEmail(email) == true)
+                if (IsValidEmail(value) == true)
                     email = value;
             }
         }
@@ -57,7 +55,7 @@ namespace BaiTapNhom2_Final.OOP
             get { return birthDate; }
             set
             {
-                String.Format("{0:dd/MM/yyyy}", birthDate);
+                birthDate = value;//String.Format("{0:dd/MM/yyyy}", value);
             }
         }
         //Xây dựng hàm khởi tạo không có tham số 
@@ -85,13 +83,6 @@ namespace BaiTapNhom2_Final.OOP
             this.BirthDate = BirthDate;
         }
 
-        //Hàm kiểm tra Số điện thoại có phải kiểu số 0 : 1 - True , 0 - False
-        public bool IsValidPhone(string value)
-        {
-            string pattern = @"^-*[0-9,\.?\-?\(?\)?\ ]+$";
-            return Regex.IsMatch(value, pattern);
-        }
-
         //Xây dựng hàm kiểm tra có phải email không : 1 - True , 0 - False
         public bool IsValidEmail(string email)
         {
@@ -107,6 +98,33 @@ namespace BaiTapNhom2_Final.OOP
         public double PaymentAmount()
         {
             throw new NotImplementedException();
+        }
+
+        //Ham Kiem tra chuoi chi chua cac ki tu 0123456789
+        public bool IsInt(string num)
+        {
+            foreach (char c in num)
+            {
+                int iN = (int)c;
+                //Ma ASCII: 48=0, 57=9
+                if ((iN > 57) || (iN < 48))
+                    return false;
+            }
+            return true;
+        }
+
+        //Hàm kiểm tra Số điện thoại có phải kiểu số 0 : 1 - True , 0 - False
+        public bool IsValidPhone(string value)
+        {
+            if (IsInt(value) == true)
+            {
+                if (value.Length < 7 || value.Length > 10)
+                    return false;
+                else
+                    return true;
+            }
+            else
+                return false;
         }
     }
 }
