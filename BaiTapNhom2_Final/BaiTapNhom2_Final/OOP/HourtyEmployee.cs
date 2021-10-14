@@ -23,14 +23,6 @@ namespace BaiTapNhom2_Final.OOP
             set { workingHours = value; }
         }
 
-        //Xây dựng hàm khởi tạo 5 tham số
-        public HourtyEmployee(double Wage, double WorkingHours, string SSN, string FirstName, string LastName)
-            : base(SSN, FirstName,LastName)
-        {
-            this.Wage = Wage;
-            this.WorkingHours = WorkingHours;
-        }
-
         //Xây dựng hàm khởi tạo 8 tham số 
         public HourtyEmployee(double Wage, double WorkingHours, string SSN, string FirstName, string LastName, string Phone, string Email, string BirthDate)
             : base(SSN, FirstName, LastName, Phone, Email, BirthDate)
@@ -39,11 +31,16 @@ namespace BaiTapNhom2_Final.OOP
             this.WorkingHours = WorkingHours;
         }
 
-        //Overide phương thức Display từ Employee --ToSting()
+        //Overide phương thức Display từ Employee 
         public override void Display()
         {
             Console.WriteLine("Thông tin HourtyEmployee : \n- SSN: {0} - FirstName: {1} - LastName: {2} - Phone : {3} - Email : {5} - Birthday : {4} - Wage : {5} - WorkingHours : {6}", 
                    SSN, FirstName, LastName, Phone, Email, BirthDate, Wage, WorkingHours);
+        }
+
+        //Xây dựng phương thức ToString()
+        public void ToString()
+        {
         }
     }
 }

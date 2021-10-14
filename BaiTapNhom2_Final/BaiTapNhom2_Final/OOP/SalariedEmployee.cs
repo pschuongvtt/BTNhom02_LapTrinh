@@ -30,14 +30,6 @@ namespace BaiTapNhom2_Final.OOP
             get {return basicSalary;}
             set { basicSalary = value;}
         }
-        //Xây dựng hàm khởi tạo 6 tham số
-        public SalariedEmployee(double CommissionRate, double GrossSales, double BasicSalary, string SSN, string FirstName, string LastName)
-            : base(SSN, FirstName,LastName)
-        {
-            this.CommissionRate = CommissionRate;
-            this.GrossSales = GrossSales;
-            this.BasicSalary = BasicSalary;
-        }
 
         //Xây dựng hàm khởi tạo 9 tham số 
         public SalariedEmployee(double CommissionRate, double GrossSales, double BasicSalary, string SSN, string FirstName, string LastName, string Phone, string Email, string BirthDate)
@@ -48,11 +40,16 @@ namespace BaiTapNhom2_Final.OOP
             this.BasicSalary = BasicSalary;
         }
 
-        //Overide phương thức Display từ Employee --ToString()
+        //Overide phương thức Display từ Employee 
         public override void Display()
         {
-            Console.WriteLine("Thông tin SalariedEmployee: \n- SSN: {0} - FirstName: {1} - LastName: {2} - Phone : {3} - Email : {4} - Birthday : {5} - CommissionRate : {6} - GrossSales : {7}, GrossSales: {8}",
+            Console.WriteLine("Thông tin SalariedEmployee: \n- SSN: {0} - FirstName: {1} - LastName: {2} - Phone : {3} - Email : {4} - Birthday : {5} - CommissionRate : {6} - GrossSales : {7}, BasicSalary: {8}",
                     SSN, FirstName, LastName, Phone, Email, BirthDate, CommissionRate, GrossSales, BasicSalary);
+        }
+
+        //Xây dựng phương thức ToString()
+        public void ToString()
+        {
         }
     }
 }

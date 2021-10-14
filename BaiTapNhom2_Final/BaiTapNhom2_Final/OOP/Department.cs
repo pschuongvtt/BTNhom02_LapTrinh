@@ -37,7 +37,7 @@ namespace BaiTapNhom2_Final.OOP
             this.listOfEmployee = listOfEmployee;
         }
 
-        //Xây dựng phương thức ToString -- Chính là phương thức Display 
+        //Xây dựng phương thức phương thức Display 
         public void Display()
         {
             //Xuất thông tin phòng ban 
@@ -49,6 +49,11 @@ namespace BaiTapNhom2_Final.OOP
             }
         }
 
+        //Xây dựng phương thức ToString
+        public void ToString()
+        {
+
+        }
         
     }
 }

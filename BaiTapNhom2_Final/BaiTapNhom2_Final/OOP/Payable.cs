@@ -9,5 +9,6 @@ namespace BaiTapNhom2_Final.OOP
     interface Payable
     {
         double PaymentAmount();
+        void ToString();
     }
 }

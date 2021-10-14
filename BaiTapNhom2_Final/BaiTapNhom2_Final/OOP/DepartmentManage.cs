@@ -84,9 +84,9 @@ namespace BaiTapNhom2_Final.OOP
                                     foreach (var item in manage.listdepartment)
                                     {
                                         if(manage.listdepartment.Count > 0)
-                                            foreach (var tam in item.ListOfEmployee)
+                                            foreach (SalariedEmployee tam in item.ListOfEmployee)
                                             {
-                                                if (item.GetType() == typeof(SalariedEmployee))
+                                                //if (tam.GetType() == typeof(SalariedEmployee))
                                                     tam.Display();
                                             }
                                                 
@@ -99,7 +99,7 @@ namespace BaiTapNhom2_Final.OOP
                                         if (manage.listdepartment.Count > 0)
                                             foreach (var tam in item.ListOfEmployee)
                                             {
-                                                if (item.GetType() == typeof(HourtyEmployee))
+                                                if (tam.GetType() == typeof(HourtyEmployee))
                                                     tam.Display();
                                             }
                                     }
@@ -247,7 +247,7 @@ namespace BaiTapNhom2_Final.OOP
                         {
                             Console.WriteLine("Mời bạn nhập Ngày sinh");
                             string s = Console.ReadLine();
-                            if (IsInt(s) == true)
+                            if (IsInt(s) == true && Convert.ToInt32(s) >= 1 && Convert.ToInt32(s) <= 31)
                             {
                                 NgaySinh = Convert.ToInt32(s);
                                 break;
@@ -259,7 +259,7 @@ namespace BaiTapNhom2_Final.OOP
                         {
                             Console.WriteLine("Mời bạn nhập Tháng sinh");
                             string s = Console.ReadLine();
-                            if (IsInt(s) == true)
+                            if (IsInt(s) == true  && Convert.ToInt32(s) >= 1 && Convert.ToInt32(s) <= 12)
                             {
                                 ThangSinh = Convert.ToInt32(s);
                                 break;
@@ -271,7 +271,7 @@ namespace BaiTapNhom2_Final.OOP
                         {
                             Console.WriteLine("Mời bạn nhập Năm sinh");
                             string s = Console.ReadLine();
-                            if (IsInt(s) == true)
+                            if (IsInt(s) == true && Convert.ToInt32(s) >= 1000)
                             {
                                 NamSinh = Convert.ToInt32(s);
                                 break;
@@ -366,7 +366,7 @@ namespace BaiTapNhom2_Final.OOP
                         {
                             Console.WriteLine("Mời bạn nhập Ngày sinh");
                             string s = Console.ReadLine();
-                            if (IsInt(s) == true && Convert.ToInt32(s) > 1 && Convert.ToInt32(s) < 31)
+                            if (IsInt(s) == true && Convert.ToInt32(s) >= 1 && Convert.ToInt32(s) <= 31)
                             {
                                 NgaySinh = Convert.ToInt32(s);
                                 break;
@@ -378,7 +378,7 @@ namespace BaiTapNhom2_Final.OOP
                         {
                             Console.WriteLine("Mời bạn nhập Tháng sinh");
                             string s = Console.ReadLine();
-                            if (IsInt(s) == true && Convert.ToInt32(s) > 1 && Convert.ToInt32(s) < 12)
+                            if (IsInt(s) == true && Convert.ToInt32(s) >= 1 && Convert.ToInt32(s) <= 12)
                             {
                                 ThangSinh = Convert.ToInt32(s);
                                 break;

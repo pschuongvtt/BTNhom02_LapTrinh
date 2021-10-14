@@ -91,15 +91,6 @@ namespace BaiTapNhom2_Final.OOP
             return rx.IsMatch(email);
         }
 
-        //Xây dựng phương thức ToString -- Chính là phương thức Display 
-        public abstract void Display();
-        
-        //Override phương thức từ Interface
-        public double PaymentAmount()
-        {
-            throw new NotImplementedException();
-        }
-
         //Ham Kiem tra chuoi chi chua cac ki tu 0123456789
         public bool IsInt(string num)
         {
@@ -126,5 +117,25 @@ namespace BaiTapNhom2_Final.OOP
             else
                 return false;
         }
+
+        //Xây dựng phương thức Display 
+        public abstract void Display();
+
+        //Override phương thức ToString từ Interface
+        public new void ToString()
+        {
+            throw new NotImplementedException();
+        }
+
+        //Override phương thức từ Interface
+        public double PaymentAmount()
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
+
+       
     }
 }
