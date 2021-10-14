@@ -31,9 +31,11 @@ namespace BaiTapNhom2_Final.OOP
                 switch (kq)
                 {
                     case 1:
+                        #region 1. Nhập danh sách phòng ban và nhân viên
                         //Kiên
-                        int y = 3; 
-                        do{
+                        int y = 3;
+                        do
+                        {
                             Console.WriteLine("-----Mời bạn chọn danh mục-----");
                             Console.WriteLine("1_1. Nhập danh sách phòng ban");
                             Console.WriteLine("1_2. Nhập danh sách nhân viên");
@@ -42,29 +44,32 @@ namespace BaiTapNhom2_Final.OOP
                             int case1 = Convert.ToInt32(Console.ReadLine());
                             switch (case1)
                             {
-                                case 1 :
+                                case 1:
                                     Console.Write("Nhập tên phòng ban cần thêm: ");
                                     string tam = Console.ReadLine();
                                     List<Employee> dsnv = new List<Employee>();
                                     manage.NhapDanhSachPhongBan(tam, dsnv);
 
                                     Console.WriteLine("\n\n");
-                                    break; 
-                                case 2 :
+                                    break;
+                                case 2:
                                     manage.NhapDanhSachNhanVien();
                                     Console.WriteLine("\n\n");
                                     break;
-                                default :
+                                default:
                                     y = -1;
                                     Console.WriteLine("\n\n");
                                     break;
                             }
                         } while (y > 0);
                         break;
+                        #endregion
                     case 2:
+                        #region 2. Hiển thị thông tin từng loại đối tượng nhân viên
                         //Kiên
-                        int z = 3; 
-                        do{
+                        int z = 3;
+                        do
+                        {
                             Console.WriteLine("-----Mời bạn chọn danh mục-----");
                             Console.WriteLine("2_1. Xuất toàn bộ danh sách nhân viên");
                             Console.WriteLine("2_2. Xuất toàn bộ danh sách nhân viên SarariedEmployee");
@@ -76,20 +81,20 @@ namespace BaiTapNhom2_Final.OOP
                             {
                                 //1: Toàn bộ  , 2 : SalariedEmployee , 3 : HourtyEmployee
                                 case 1://Xuất toàn bộ nhân viên
-                                        foreach (Department item in manage.listdepartment)
-                                            item.Display();
-                                        Console.WriteLine("\n\n");
-                                        break;
+                                    foreach (Department item in manage.listdepartment)
+                                        item.Display();
+                                    Console.WriteLine("\n\n");
+                                    break;
                                 case 2:
                                     foreach (var item in manage.listdepartment)
                                     {
-                                        if(manage.listdepartment.Count > 0)
-                                            foreach (SalariedEmployee tam in item.ListOfEmployee)
+                                        if (manage.listdepartment.Count > 0)
+                                            foreach (Employee tam in item.ListOfEmployee)
                                             {
-                                                //if (tam.GetType() == typeof(SalariedEmployee))
+                                                if (tam.GetType() == typeof(SalariedEmployee))
                                                     tam.Display();
                                             }
-                                                
+
                                     }
                                     Console.WriteLine("\n\n");
                                     break;
@@ -112,10 +117,13 @@ namespace BaiTapNhom2_Final.OOP
                             }
                         } while (z > 0);
                         break;
+                        #endregion
                     case 3:
-                         //Hương
-                         int t = 3; 
-                         do{
+                        #region 3. Tìm kiếm Nhân viên
+                        //Hương
+                        int t = 3;
+                        do
+                        {
                             Console.WriteLine("-----Mời bạn chọn danh mục-----");
                             Console.WriteLine("3_1. Tìm kiếm nhân viên theo phòng ban");
                             Console.WriteLine("3_2. Tìm kiếm nhân viên theo tên");
@@ -125,30 +133,34 @@ namespace BaiTapNhom2_Final.OOP
                             int case1 = Convert.ToInt32(Console.ReadLine());
                             switch (case1)
                             {
-                                case 1 :
+                                case 1:
                                     Console.WriteLine("Mời bạn nhập tên phòng ban");
                                     string tenPhongban = Console.ReadLine();
                                     manage.TimKiemNhanVienTheoPhongBan(tenPhongban.Trim());
                                     Console.WriteLine("\n\n");
-                                    break; 
-                                case 2 :
+                                    break;
+                                case 2:
                                     Console.WriteLine("Mời bạn nhập tên nhân viên");
                                     string tenNhanVien = Console.ReadLine();
                                     manage.TimKiemNhanVienTheoTen(tenNhanVien.Trim());
                                     Console.WriteLine("\n\n");
                                     break;
-                                default :
+                                default:
                                     t = -1;
                                     Console.WriteLine("\n\n");
                                     break;
                             }
                         } while (t > 0);
                         break;
+                        #endregion
                     case 4:
+                        #region 4. Thống kê
                         //Kiều
                         manage.HienThiDanhSach();
                         Console.WriteLine("\n\n");
                         break;
+                        #endregion
+                       
                 }
 
             } while (x > 0);
@@ -444,7 +456,6 @@ namespace BaiTapNhom2_Final.OOP
             } while (t > 0);
         }
 
-       
         //3_1: Tìm kiếm nhân viên theo phòng ban 
         public void TimKiemNhanVienTheoPhongBan(string TenPhongBan)
         {
@@ -496,19 +507,20 @@ namespace BaiTapNhom2_Final.OOP
             }
         }
 
+        #region 5. Hàm dùng chung
         //Hàm tìm phòng ban 
         public bool TimPhongBan(string tenPhongBan)
         {
             foreach (var item in listdepartment)
             {
-                if(item.DepartmentName.Equals(tenPhongBan))
+                if (item.DepartmentName.Equals(tenPhongBan))
                 {
                     return true;
                 }
             }
             return false;
         }
-       
+
         //Xây dựng hàm kiểm tra có phải email không : 1 - True , 0 - False
         public bool IsValidEmail(string email)
         {
@@ -543,5 +555,7 @@ namespace BaiTapNhom2_Final.OOP
             else
                 return false;
         }
+        #endregion
+      
     }
 }

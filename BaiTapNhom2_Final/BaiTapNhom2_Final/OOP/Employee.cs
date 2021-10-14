@@ -133,9 +133,5 @@ namespace BaiTapNhom2_Final.OOP
             throw new NotImplementedException();
         }
 
-        
-
-
-       
     }
 }
