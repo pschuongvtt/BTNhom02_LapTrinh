@@ -5,7 +5,7 @@
 3.Mai Thị Thúy Kiều 
 4.Nguyễn Văn Học
 
-----------------Nội dung thông tin bái tập-----------------
+----------------Nội dung thông tin bái tập-----------------\n
 Mô tả dự án : 
 Xây dựng thông tin sơ đồ các lớp và quan hệ bao gồm : 
 + Invoice
