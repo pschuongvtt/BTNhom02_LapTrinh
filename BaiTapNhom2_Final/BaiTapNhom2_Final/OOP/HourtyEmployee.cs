@@ -34,7 +34,7 @@ namespace BaiTapNhom2_Final.OOP
         //Overide phương thức Display từ Employee 
         public override void Display()
         {
-            Console.WriteLine("Thông tin HourtyEmployee : \n- SSN: {0} - FirstName: {1} - LastName: {2} - Phone : {3} - Email : {5} - Birthday : {4} - Wage : {5} - WorkingHours : {6}", 
+            Console.WriteLine("Thông tin HourtyEmployee : \n- SSN: {0} - FirstName: {1} - LastName: {2} - Phone : {3} - Email : {4} - Birthday : {5} - Wage : {6} - WorkingHours : {7}", 
                    SSN, FirstName, LastName, Phone, Email, BirthDate, Wage, WorkingHours);
         }
 

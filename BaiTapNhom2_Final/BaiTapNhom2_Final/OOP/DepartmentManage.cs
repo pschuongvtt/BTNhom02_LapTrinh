@@ -27,7 +27,10 @@ namespace BaiTapNhom2_Final.OOP
                 Console.WriteLine("4. Thống kê");
                 Console.WriteLine("--> Mời bạn chọn chức năng");
 
-                int kq = Convert.ToInt32(Console.ReadLine());
+                //ThuHuong đã sửa phần chạy nhập sai ký tự
+                string chuoi_kq = Console.ReadLine();
+                int kq = manage.KiemTraNhapChonMenu_PhanCap4(chuoi_kq);
+
                 switch (kq)
                 {
                     case 1:
@@ -41,7 +44,11 @@ namespace BaiTapNhom2_Final.OOP
                             Console.WriteLine("1_2. Nhập danh sách nhân viên");
                             Console.WriteLine("1_3. Trở lại menu chính");
                             Console.WriteLine("--> Mời bạn chọn chức năng");
-                            int case1 = Convert.ToInt32(Console.ReadLine());
+
+                            //ThuHuong đã sửa phần chạy nhập sai ký tự
+                            chuoi_kq = Console.ReadLine();
+                            int case1 = manage.KiemTraNhapChonMenu_PhanCap3(chuoi_kq);
+
                             switch (case1)
                             {
                                 case 1:
@@ -76,7 +83,11 @@ namespace BaiTapNhom2_Final.OOP
                             Console.WriteLine("2_3. Xuất toàn bộ danh sách nhân viên HourtyEmployee");
                             Console.WriteLine("2_4. Trở lại menu chính");
                             Console.WriteLine("--> Mời bạn chọn chức năng");
-                            int chon = Convert.ToInt32(Console.ReadLine());
+
+                            //ThuHuong đã sửa phần chạy nhập sai ký tự
+                            chuoi_kq = Console.ReadLine();
+                            int chon = manage.KiemTraNhapChonMenu_PhanCap4(chuoi_kq);
+
                             switch (chon)
                             {
                                 //1: Toàn bộ  , 2 : SalariedEmployee , 3 : HourtyEmployee
@@ -130,7 +141,10 @@ namespace BaiTapNhom2_Final.OOP
                             Console.WriteLine("3_3. Trở lại menu chính");
                             Console.WriteLine("--> Mời bạn chọn chức năng");
 
-                            int case1 = Convert.ToInt32(Console.ReadLine());
+                            //ThuHuong đã sửa phần chạy nhập sai ký tự
+                            chuoi_kq = Console.ReadLine();
+                            int case1 = manage.KiemTraNhapChonMenu_PhanCap3(chuoi_kq);
+
                             switch (case1)
                             {
                                 case 1:
@@ -291,7 +305,7 @@ namespace BaiTapNhom2_Final.OOP
                             else Console.WriteLine("Bạn nhập sai ngày sinh hoặc không đúng đúng định dạng ngày sinh");
                         }
 
-                        //Thiết lập các kiểu định dạng hợp lệ dd/MM/yyyy
+                        //Thiết lập các kiểu định dạng hợp lệ dd/MM/yyyy; Relex
                         if (NgaySinh > 0 && NgaySinh < 10)
                             chuoi_NgaySinh = "0" + NgaySinh;
                         else chuoi_NgaySinh = NgaySinh.ToString();
@@ -459,7 +473,7 @@ namespace BaiTapNhom2_Final.OOP
         //3_1: Tìm kiếm nhân viên theo phòng ban 
         public void TimKiemNhanVienTheoPhongBan(string TenPhongBan)
         {
-            int kq = 0;
+            int kq = 0;//Thiết lập bool
             foreach (var item in listdepartment)
             {
                 if (item.DepartmentName.Equals(TenPhongBan))
@@ -477,7 +491,7 @@ namespace BaiTapNhom2_Final.OOP
         //3_2: Tìm kiếm nhân viên theo tên nhân viên 
         public void TimKiemNhanVienTheoTen(string TenNhanVien)
         {
-            int kq = 0;
+            int kq = 0;//bool
             foreach (var depart in listdepartment)
             {
                 foreach (var empl in depart.ListOfEmployee)
@@ -554,6 +568,65 @@ namespace BaiTapNhom2_Final.OOP
             }
             else
                 return false;
+        }
+
+        //Hàm kiểm tra chọn menu 4 phân cấp
+        public int KiemTraNhapChonMenu_PhanCap4(string chuoi_kq)
+        {
+            //ThuHuong đã sửa phần chạy nhập sai ký tự
+            int kq = 0;
+            int check_chon = 3;
+            while (check_chon > 0)
+            {
+                if (Int32.TryParse(chuoi_kq, out kq))
+                {
+                    if (Convert.ToInt32(chuoi_kq) < 5 && Convert.ToInt32(chuoi_kq) > 0)
+                    {
+                        return kq = Convert.ToInt32(chuoi_kq);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Bạn nhập sai ký hiệu hoặc không có tính năng trong menu");
+                        break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Bạn nhập sai ký hiệu hoặc không có tính năng trong menu");
+                    break;
+                }
+            }
+            return 0;
+        }
+
+
+        //Hàm kiểm tra chọn menu 3 phân cấp
+        public int KiemTraNhapChonMenu_PhanCap3(string chuoi_kq)
+        {
+            //ThuHuong đã sửa phần chạy nhập sai ký tự
+            int kq = 0;
+            int check_chon = 3;
+            while (check_chon > 0)
+            {
+                if (Int32.TryParse(chuoi_kq, out kq))
+                {
+                    if (Convert.ToInt32(chuoi_kq) < 4 && Convert.ToInt32(chuoi_kq) > 0)
+                    {
+                        return kq = Convert.ToInt32(chuoi_kq);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Bạn nhập sai ký hiệu hoặc không có tính năng trong menu");
+                        break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Bạn nhập sai ký hiệu hoặc không có tính năng trong menu");
+                    break;
+                }
+            }
+            return 0;
         }
         #endregion
       

@@ -9,6 +9,8 @@ namespace BaiTapNhom2_Final.OOP
     interface Payable
     {
         double PaymentAmount();
-        void ToString();
+        void ToString();//Không xây dựng phương thức ToString()
+
+
     }
 }

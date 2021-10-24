@@ -72,7 +72,7 @@ namespace BaiTapNhom2_Final.OOP
             this.LastName = LastName;
         }
 
-        //Xây dựng hàm khởi tạo có 5 tham số
+        //Xây dựng hàm khởi tạo có 5 tham số --Bỏ
         public Employee(string SSN, string FirstName, string LastName, string Phone, string Email, string BirthDate)
         {
             this.SSN = SSN;
@@ -118,7 +118,7 @@ namespace BaiTapNhom2_Final.OOP
                 return false;
         }
 
-        //Xây dựng phương thức Display 
+        //Xây dựng phương thức Display : virtual
         public abstract void Display();
 
         //Override phương thức ToString từ Interface
